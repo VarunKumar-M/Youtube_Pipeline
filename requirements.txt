@@ -1,0 +1,24 @@
+# Core
+python-dotenv>=1.0.0
+google-genai>=1.0.0
+requests>=2.31.0
+
+# Stage 1 - trend nudge (optional; degrades gracefully if it fails)
+pytrends>=4.9.2
+
+# Stage 3+4 - voice + word timings (replaces Whisper entirely)
+edge-tts>=6.1.0
+
+# Stage 5/6/7/8 - visuals, assembly, shorts, thumbnail
+# moviepy 1.0.3 is pinned deliberately: the 2.x API is different, and 1.0.3's
+# resize needs Pillow<10 (Pillow 10 removed Image.ANTIALIAS). imageio-ffmpeg
+# bundles a static ffmpeg so a system ffmpeg install is usually unnecessary.
+moviepy==1.0.3
+imageio-ffmpeg>=0.4.9
+Pillow>=9.5,<10
+numpy>=1.24,<2
+
+# Stage 9 - YouTube upload
+google-api-python-client>=2.100.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
